@@ -102,11 +102,24 @@
     setTimeout(function() {
         var reminderMessage = document.createElement("div");
         var reminderText = document.createElement("p");
-        reminderText.textContent = "Don't forget to return to the questionnaire!";
+        reminderText.textContent = "Done? Return to the questionnaire! ";
         reminderText.style.color = "red";
         reminderText.style.fontWeight = "bold";
         reminderMessage.appendChild(reminderText);
+
+        var questionnaireLink = document.createElement("a");
+        questionnaireLink.href = "https://tilburgss.co1.qualtrics.com/jfe/form/SV_9EKn6odofJYddjg";
+        questionnaireLink.textContent = "Click here";
+        questionnaireLink.style.color = "red";
+        questionnaireLink.style.textDecoration = "underline", "bold";
+        questionnaireLink.style.cursor = "pointer";
+        questionnaireLink.target = "_blank"; // Open link in a new tab
+
+        reminderMessage.appendChild(questionnaireLink);
+
         document.querySelector('.left').appendChild(reminderMessage);
-    }, 20000);
+    }, 15000);
 </script>
+
+
 
